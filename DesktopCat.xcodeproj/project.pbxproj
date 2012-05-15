@@ -18,8 +18,8 @@
 		9687F33515620B3400886460 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9687F33315620B3400886460 /* InfoPlist.strings */; };
 		9687F33815620B3400886460 /* DesktopCatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9687F33715620B3400886460 /* DesktopCatTests.m */; };
 		9687F34215620DF800886460 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9687F34115620DF800886460 /* README.md */; };
-		9687F34515620ECE00886460 /* JBDesktopCat.m in Sources */ = {isa = PBXBuildFile; fileRef = 9687F34415620ECE00886460 /* JBDesktopCat.m */; };
 		9687F34C15620F0C00886460 /* JBDesktopCatController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9687F34B15620F0C00886460 /* JBDesktopCatController.m */; };
+		9687F3581562124C00886460 /* JBDesktopCat.m in Sources */ = {isa = PBXBuildFile; fileRef = 9687F3571562124C00886460 /* JBDesktopCat.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,10 +53,10 @@
 		9687F33615620B3400886460 /* DesktopCatTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DesktopCatTests.h; sourceTree = "<group>"; };
 		9687F33715620B3400886460 /* DesktopCatTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DesktopCatTests.m; sourceTree = "<group>"; };
 		9687F34115620DF800886460 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
-		9687F34315620ECE00886460 /* JBDesktopCat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBDesktopCat.h; sourceTree = "<group>"; };
-		9687F34415620ECE00886460 /* JBDesktopCat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBDesktopCat.m; sourceTree = "<group>"; };
 		9687F34A15620F0C00886460 /* JBDesktopCatController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBDesktopCatController.h; sourceTree = "<group>"; };
 		9687F34B15620F0C00886460 /* JBDesktopCatController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBDesktopCatController.m; sourceTree = "<group>"; };
+		9687F3561562124C00886460 /* JBDesktopCat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBDesktopCat.h; sourceTree = "<group>"; };
+		9687F3571562124C00886460 /* JBDesktopCat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBDesktopCat.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,10 +123,10 @@
 		9687F31315620B3400886460 /* DesktopCat */ = {
 			isa = PBXGroup;
 			children = (
-				9687F34615620ED400886460 /* Cat & Cat Controller */,
-				9687F31F15620B3400886460 /* JBAppDelegate.h */,
-				9687F32015620B3400886460 /* JBAppDelegate.m */,
-				9687F32215620B3400886460 /* MainMenu.xib */,
+				9687F34615620ED400886460 /* Cat */,
+				9687F354156211AB00886460 /* Cat Container Window */,
+				9687F3531562119800886460 /* Cat Controller */,
+				9687F34D156210F800886460 /* Cat Animation Images */,
 				9687F31415620B3400886460 /* Supporting Files */,
 			);
 			path = DesktopCat;
@@ -135,6 +135,9 @@
 		9687F31415620B3400886460 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9687F31F15620B3400886460 /* JBAppDelegate.h */,
+				9687F32015620B3400886460 /* JBAppDelegate.m */,
+				9687F32215620B3400886460 /* MainMenu.xib */,
 				9687F31515620B3400886460 /* DesktopCat-Info.plist */,
 				9687F31615620B3400886460 /* InfoPlist.strings */,
 				9687F31915620B3400886460 /* main.m */,
@@ -163,15 +166,36 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		9687F34615620ED400886460 /* Cat & Cat Controller */ = {
+		9687F34615620ED400886460 /* Cat */ = {
 			isa = PBXGroup;
 			children = (
-				9687F34315620ECE00886460 /* JBDesktopCat.h */,
-				9687F34415620ECE00886460 /* JBDesktopCat.m */,
+				9687F3561562124C00886460 /* JBDesktopCat.h */,
+				9687F3571562124C00886460 /* JBDesktopCat.m */,
+			);
+			name = Cat;
+			sourceTree = "<group>";
+		};
+		9687F34D156210F800886460 /* Cat Animation Images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Cat Animation Images";
+			sourceTree = "<group>";
+		};
+		9687F3531562119800886460 /* Cat Controller */ = {
+			isa = PBXGroup;
+			children = (
 				9687F34A15620F0C00886460 /* JBDesktopCatController.h */,
 				9687F34B15620F0C00886460 /* JBDesktopCatController.m */,
 			);
-			name = "Cat & Cat Controller";
+			name = "Cat Controller";
+			sourceTree = "<group>";
+		};
+		9687F354156211AB00886460 /* Cat Container Window */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Cat Container Window";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,8 +310,8 @@
 			files = (
 				9687F31A15620B3400886460 /* main.m in Sources */,
 				9687F32115620B3400886460 /* JBAppDelegate.m in Sources */,
-				9687F34515620ECE00886460 /* JBDesktopCat.m in Sources */,
 				9687F34C15620F0C00886460 /* JBDesktopCatController.m in Sources */,
+				9687F3581562124C00886460 /* JBDesktopCat.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

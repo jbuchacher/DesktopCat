@@ -6,8 +6,8 @@
 //  Copyright (c) 2012 Joshua Buchacher. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <Cocoa/Cocoa.h>
 
-@interface JBDesktopCat : NSObject
+@interface JBDesktopCat : NSView
 
 @end
