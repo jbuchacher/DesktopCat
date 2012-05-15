@@ -1,0 +1,452 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9687F30E15620B3400886460 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9687F30D15620B3400886460 /* Cocoa.framework */; };
+		9687F31815620B3400886460 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9687F31615620B3400886460 /* InfoPlist.strings */; };
+		9687F31A15620B3400886460 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9687F31915620B3400886460 /* main.m */; };
+		9687F31E15620B3400886460 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 9687F31C15620B3400886460 /* Credits.rtf */; };
+		9687F32115620B3400886460 /* JBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9687F32015620B3400886460 /* JBAppDelegate.m */; };
+		9687F32415620B3400886460 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9687F32215620B3400886460 /* MainMenu.xib */; };
+		9687F32C15620B3400886460 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9687F32B15620B3400886460 /* SenTestingKit.framework */; };
+		9687F32D15620B3400886460 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9687F30D15620B3400886460 /* Cocoa.framework */; };
+		9687F33515620B3400886460 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9687F33315620B3400886460 /* InfoPlist.strings */; };
+		9687F33815620B3400886460 /* DesktopCatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9687F33715620B3400886460 /* DesktopCatTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9687F32E15620B3400886460 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9687F30015620B3300886460 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9687F30815620B3400886460;
+			remoteInfo = DesktopCat;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9687F30915620B3400886460 /* DesktopCat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesktopCat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9687F30D15620B3400886460 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		9687F31015620B3400886460 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		9687F31115620B3400886460 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		9687F31215620B3400886460 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9687F31515620B3400886460 /* DesktopCat-Info.plist */ = {isa = PBXFileReference; path = "DesktopCat-Info.plist"; sourceTree = "<group>"; };
+		9687F31715620B3400886460 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9687F31915620B3400886460 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9687F31B15620B3400886460 /* DesktopCat-Prefix.pch */ = {isa = PBXFileReference; path = "DesktopCat-Prefix.pch"; sourceTree = "<group>"; };
+		9687F31D15620B3400886460 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		9687F31F15620B3400886460 /* JBAppDelegate.h */ = {isa = PBXFileReference; path = JBAppDelegate.h; sourceTree = "<group>"; };
+		9687F32015620B3400886460 /* JBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBAppDelegate.m; sourceTree = "<group>"; };
+		9687F32315620B3400886460 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		9687F32A15620B3400886460 /* DesktopCatTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DesktopCatTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9687F32B15620B3400886460 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		9687F33215620B3400886460 /* DesktopCatTests-Info.plist */ = {isa = PBXFileReference; path = "DesktopCatTests-Info.plist"; sourceTree = "<group>"; };
+		9687F33415620B3400886460 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9687F33615620B3400886460 /* DesktopCatTests.h */ = {isa = PBXFileReference; path = DesktopCatTests.h; sourceTree = "<group>"; };
+		9687F33715620B3400886460 /* DesktopCatTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DesktopCatTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9687F30615620B3400886460 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9687F30E15620B3400886460 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9687F32615620B3400886460 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9687F32C15620B3400886460 /* SenTestingKit.framework in Frameworks */,
+				9687F32D15620B3400886460 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9687F2FE15620B3300886460 = {
+			isa = PBXGroup;
+			children = (
+				9687F31315620B3400886460 /* DesktopCat */,
+				9687F33015620B3400886460 /* DesktopCatTests */,
+				9687F30C15620B3400886460 /* Frameworks */,
+				9687F30A15620B3400886460 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9687F30A15620B3400886460 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9687F30915620B3400886460 /* DesktopCat.app */,
+				9687F32A15620B3400886460 /* DesktopCatTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9687F30C15620B3400886460 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9687F30D15620B3400886460 /* Cocoa.framework */,
+				9687F32B15620B3400886460 /* SenTestingKit.framework */,
+				9687F30F15620B3400886460 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9687F30F15620B3400886460 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9687F31015620B3400886460 /* AppKit.framework */,
+				9687F31115620B3400886460 /* CoreData.framework */,
+				9687F31215620B3400886460 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		9687F31315620B3400886460 /* DesktopCat */ = {
+			isa = PBXGroup;
+			children = (
+				9687F31F15620B3400886460 /* JBAppDelegate.h */,
+				9687F32015620B3400886460 /* JBAppDelegate.m */,
+				9687F32215620B3400886460 /* MainMenu.xib */,
+				9687F31415620B3400886460 /* Supporting Files */,
+			);
+			path = DesktopCat;
+			sourceTree = "<group>";
+		};
+		9687F31415620B3400886460 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9687F31515620B3400886460 /* DesktopCat-Info.plist */,
+				9687F31615620B3400886460 /* InfoPlist.strings */,
+				9687F31915620B3400886460 /* main.m */,
+				9687F31B15620B3400886460 /* DesktopCat-Prefix.pch */,
+				9687F31C15620B3400886460 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9687F33015620B3400886460 /* DesktopCatTests */ = {
+			isa = PBXGroup;
+			children = (
+				9687F33615620B3400886460 /* DesktopCatTests.h */,
+				9687F33715620B3400886460 /* DesktopCatTests.m */,
+				9687F33115620B3400886460 /* Supporting Files */,
+			);
+			path = DesktopCatTests;
+			sourceTree = "<group>";
+		};
+		9687F33115620B3400886460 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9687F33215620B3400886460 /* DesktopCatTests-Info.plist */,
+				9687F33315620B3400886460 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9687F30815620B3400886460 /* DesktopCat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9687F33B15620B3400886460 /* Build configuration list for PBXNativeTarget "DesktopCat" */;
+			buildPhases = (
+				9687F30515620B3400886460 /* Sources */,
+				9687F30615620B3400886460 /* Frameworks */,
+				9687F30715620B3400886460 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DesktopCat;
+			productName = DesktopCat;
+			productReference = 9687F30915620B3400886460 /* DesktopCat.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9687F32915620B3400886460 /* DesktopCatTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9687F33E15620B3400886460 /* Build configuration list for PBXNativeTarget "DesktopCatTests" */;
+			buildPhases = (
+				9687F32515620B3400886460 /* Sources */,
+				9687F32615620B3400886460 /* Frameworks */,
+				9687F32715620B3400886460 /* Resources */,
+				9687F32815620B3400886460 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9687F32F15620B3400886460 /* PBXTargetDependency */,
+			);
+			name = DesktopCatTests;
+			productName = DesktopCatTests;
+			productReference = 9687F32A15620B3400886460 /* DesktopCatTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9687F30015620B3300886460 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = JB;
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = "Joshua Buchacher";
+			};
+			buildConfigurationList = 9687F30315620B3300886460 /* Build configuration list for PBXProject "DesktopCat" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 9687F2FE15620B3300886460;
+			productRefGroup = 9687F30A15620B3400886460 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9687F30815620B3400886460 /* DesktopCat */,
+				9687F32915620B3400886460 /* DesktopCatTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9687F30715620B3400886460 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9687F31815620B3400886460 /* InfoPlist.strings in Resources */,
+				9687F31E15620B3400886460 /* Credits.rtf in Resources */,
+				9687F32415620B3400886460 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9687F32715620B3400886460 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9687F33515620B3400886460 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9687F32815620B3400886460 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9687F30515620B3400886460 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9687F31A15620B3400886460 /* main.m in Sources */,
+				9687F32115620B3400886460 /* JBAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9687F32515620B3400886460 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9687F33815620B3400886460 /* DesktopCatTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9687F32F15620B3400886460 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9687F30815620B3400886460 /* DesktopCat */;
+			targetProxy = 9687F32E15620B3400886460 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9687F31615620B3400886460 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9687F31715620B3400886460 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		9687F31C15620B3400886460 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9687F31D15620B3400886460 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		9687F32215620B3400886460 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9687F32315620B3400886460 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		9687F33315620B3400886460 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9687F33415620B3400886460 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9687F33915620B3400886460 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		9687F33A15620B3400886460 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		9687F33C15620B3400886460 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DesktopCat/DesktopCat-Prefix.pch";
+				INFOPLIST_FILE = "DesktopCat/DesktopCat-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		9687F33D15620B3400886460 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DesktopCat/DesktopCat-Prefix.pch";
+				INFOPLIST_FILE = "DesktopCat/DesktopCat-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		9687F33F15620B3400886460 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DesktopCat.app/Contents/MacOS/DesktopCat";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DesktopCat/DesktopCat-Prefix.pch";
+				INFOPLIST_FILE = "DesktopCatTests/DesktopCatTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		9687F34015620B3400886460 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DesktopCat.app/Contents/MacOS/DesktopCat";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DesktopCat/DesktopCat-Prefix.pch";
+				INFOPLIST_FILE = "DesktopCatTests/DesktopCatTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9687F30315620B3300886460 /* Build configuration list for PBXProject "DesktopCat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9687F33915620B3400886460 /* Debug */,
+				9687F33A15620B3400886460 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9687F33B15620B3400886460 /* Build configuration list for PBXNativeTarget "DesktopCat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9687F33C15620B3400886460 /* Debug */,
+				9687F33D15620B3400886460 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		9687F33E15620B3400886460 /* Build configuration list for PBXNativeTarget "DesktopCatTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9687F33F15620B3400886460 /* Debug */,
+				9687F34015620B3400886460 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9687F30015620B3300886460 /* Project object */;
+}
