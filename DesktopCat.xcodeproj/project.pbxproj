@@ -20,6 +20,7 @@
 		9687F34215620DF800886460 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9687F34115620DF800886460 /* README.md */; };
 		9687F34C15620F0C00886460 /* JBDesktopCatController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9687F34B15620F0C00886460 /* JBDesktopCatController.m */; };
 		9687F3581562124C00886460 /* JBDesktopCat.m in Sources */ = {isa = PBXBuildFile; fileRef = 9687F3571562124C00886460 /* JBDesktopCat.m */; };
+		9687F35B1562127C00886460 /* JBDesktopCatContainerWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 9687F35A1562127C00886460 /* JBDesktopCatContainerWindow.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,8 @@
 		9687F34B15620F0C00886460 /* JBDesktopCatController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBDesktopCatController.m; sourceTree = "<group>"; };
 		9687F3561562124C00886460 /* JBDesktopCat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBDesktopCat.h; sourceTree = "<group>"; };
 		9687F3571562124C00886460 /* JBDesktopCat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBDesktopCat.m; sourceTree = "<group>"; };
+		9687F3591562127C00886460 /* JBDesktopCatContainerWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBDesktopCatContainerWindow.h; sourceTree = "<group>"; };
+		9687F35A1562127C00886460 /* JBDesktopCatContainerWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBDesktopCatContainerWindow.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +197,8 @@
 		9687F354156211AB00886460 /* Cat Container Window */ = {
 			isa = PBXGroup;
 			children = (
+				9687F3591562127C00886460 /* JBDesktopCatContainerWindow.h */,
+				9687F35A1562127C00886460 /* JBDesktopCatContainerWindow.m */,
 			);
 			name = "Cat Container Window";
 			sourceTree = "<group>";
@@ -312,6 +317,7 @@
 				9687F32115620B3400886460 /* JBAppDelegate.m in Sources */,
 				9687F34C15620F0C00886460 /* JBDesktopCatController.m in Sources */,
 				9687F3581562124C00886460 /* JBDesktopCat.m in Sources */,
+				9687F35B1562127C00886460 /* JBDesktopCatContainerWindow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
