@@ -17,6 +17,9 @@
 		9687F32D15620B3400886460 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9687F30D15620B3400886460 /* Cocoa.framework */; };
 		9687F33515620B3400886460 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9687F33315620B3400886460 /* InfoPlist.strings */; };
 		9687F33815620B3400886460 /* DesktopCatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9687F33715620B3400886460 /* DesktopCatTests.m */; };
+		9687F34215620DF800886460 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9687F34115620DF800886460 /* README.md */; };
+		9687F34515620ECE00886460 /* JBDesktopCat.m in Sources */ = {isa = PBXBuildFile; fileRef = 9687F34415620ECE00886460 /* JBDesktopCat.m */; };
+		9687F34C15620F0C00886460 /* JBDesktopCatController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9687F34B15620F0C00886460 /* JBDesktopCatController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,20 +38,25 @@
 		9687F31015620B3400886460 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		9687F31115620B3400886460 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		9687F31215620B3400886460 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		9687F31515620B3400886460 /* DesktopCat-Info.plist */ = {isa = PBXFileReference; path = "DesktopCat-Info.plist"; sourceTree = "<group>"; };
+		9687F31515620B3400886460 /* DesktopCat-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DesktopCat-Info.plist"; sourceTree = "<group>"; };
 		9687F31715620B3400886460 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9687F31915620B3400886460 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		9687F31B15620B3400886460 /* DesktopCat-Prefix.pch */ = {isa = PBXFileReference; path = "DesktopCat-Prefix.pch"; sourceTree = "<group>"; };
+		9687F31B15620B3400886460 /* DesktopCat-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DesktopCat-Prefix.pch"; sourceTree = "<group>"; };
 		9687F31D15620B3400886460 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		9687F31F15620B3400886460 /* JBAppDelegate.h */ = {isa = PBXFileReference; path = JBAppDelegate.h; sourceTree = "<group>"; };
+		9687F31F15620B3400886460 /* JBAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBAppDelegate.h; sourceTree = "<group>"; };
 		9687F32015620B3400886460 /* JBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBAppDelegate.m; sourceTree = "<group>"; };
 		9687F32315620B3400886460 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		9687F32A15620B3400886460 /* DesktopCatTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DesktopCatTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9687F32B15620B3400886460 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		9687F33215620B3400886460 /* DesktopCatTests-Info.plist */ = {isa = PBXFileReference; path = "DesktopCatTests-Info.plist"; sourceTree = "<group>"; };
+		9687F33215620B3400886460 /* DesktopCatTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DesktopCatTests-Info.plist"; sourceTree = "<group>"; };
 		9687F33415620B3400886460 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		9687F33615620B3400886460 /* DesktopCatTests.h */ = {isa = PBXFileReference; path = DesktopCatTests.h; sourceTree = "<group>"; };
+		9687F33615620B3400886460 /* DesktopCatTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DesktopCatTests.h; sourceTree = "<group>"; };
 		9687F33715620B3400886460 /* DesktopCatTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DesktopCatTests.m; sourceTree = "<group>"; };
+		9687F34115620DF800886460 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		9687F34315620ECE00886460 /* JBDesktopCat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBDesktopCat.h; sourceTree = "<group>"; };
+		9687F34415620ECE00886460 /* JBDesktopCat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBDesktopCat.m; sourceTree = "<group>"; };
+		9687F34A15620F0C00886460 /* JBDesktopCatController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBDesktopCatController.h; sourceTree = "<group>"; };
+		9687F34B15620F0C00886460 /* JBDesktopCatController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBDesktopCatController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +83,7 @@
 		9687F2FE15620B3300886460 = {
 			isa = PBXGroup;
 			children = (
+				9687F34115620DF800886460 /* README.md */,
 				9687F31315620B3400886460 /* DesktopCat */,
 				9687F33015620B3400886460 /* DesktopCatTests */,
 				9687F30C15620B3400886460 /* Frameworks */,
@@ -114,6 +123,7 @@
 		9687F31315620B3400886460 /* DesktopCat */ = {
 			isa = PBXGroup;
 			children = (
+				9687F34615620ED400886460 /* Cat & Cat Controller */,
 				9687F31F15620B3400886460 /* JBAppDelegate.h */,
 				9687F32015620B3400886460 /* JBAppDelegate.m */,
 				9687F32215620B3400886460 /* MainMenu.xib */,
@@ -151,6 +161,17 @@
 				9687F33315620B3400886460 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9687F34615620ED400886460 /* Cat & Cat Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9687F34315620ECE00886460 /* JBDesktopCat.h */,
+				9687F34415620ECE00886460 /* JBDesktopCat.m */,
+				9687F34A15620F0C00886460 /* JBDesktopCatController.h */,
+				9687F34B15620F0C00886460 /* JBDesktopCatController.m */,
+			);
+			name = "Cat & Cat Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,6 +249,7 @@
 				9687F31815620B3400886460 /* InfoPlist.strings in Resources */,
 				9687F31E15620B3400886460 /* Credits.rtf in Resources */,
 				9687F32415620B3400886460 /* MainMenu.xib in Resources */,
+				9687F34215620DF800886460 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +286,8 @@
 			files = (
 				9687F31A15620B3400886460 /* main.m in Sources */,
 				9687F32115620B3400886460 /* JBAppDelegate.m in Sources */,
+				9687F34515620ECE00886460 /* JBDesktopCat.m in Sources */,
+				9687F34C15620F0C00886460 /* JBDesktopCatController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
