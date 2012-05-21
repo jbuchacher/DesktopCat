@@ -10,11 +10,14 @@
 
 @implementation JBAppDelegate
 
-@synthesize window = _window;
+@synthesize kittyController = _kittyController;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    // Insert code here to initialize your application
+
+    _kittyController = [[JBDesktopCatController alloc]init];
+    [_kittyController enterCat];
+    
 }
 
 @end
