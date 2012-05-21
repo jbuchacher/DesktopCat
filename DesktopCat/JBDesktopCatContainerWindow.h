@@ -10,4 +10,6 @@
 
 @interface JBDesktopCatContainerWindow : NSWindow
 
++ (id) catWindow;
+
 @end
