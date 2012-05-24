@@ -7,9 +7,10 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "JBDesktopCat.h"
 
 @interface JBDesktopCatContainerWindow : NSWindow
 
-+ (id) catWindow;
+@property (strong, nonatomic) JBDesktopCat *desktopCat;
 
 @end

@@ -9,6 +9,7 @@
 #import "JBDesktopCatContainerWindow.h"
 
 @implementation JBDesktopCatContainerWindow
+@synthesize desktopCat = _desktopCat;
 
 - (id)initWithContentRect:(NSRect)contentRect
                 styleMask:(NSUInteger)aStyle
@@ -21,20 +22,14 @@
         [self setAlphaValue:1.0];
         // Turn off opacity so that the parts of the window that are not drawn into are transparent.
         [self setOpaque:NO];
+        // Make kitty cat on top of all the less interesting stuff
+        [self setLevel:(CGWindowLevelForKey(kCGOverlayWindowLevelKey))];
+        // Make container window background transparent.
+        [self setBackgroundColor: [NSColor clearColor]];        
     }
     
-    // Make kitty cat on top of all the less interesting stuff
-    [self setLevel:(CGWindowLevelForKey(kCGOverlayWindowLevelKey))];
     
     return self;
-}
-
-+ (id) catWindow
-{
-    NSRect catRect = NSMakeRect(0.0, 0.0, 200.0, 200.0);
-    JBDesktopCatContainerWindow *cat = [[JBDesktopCatContainerWindow alloc]initWithContentRect: catRect styleMask: NSBorderlessWindowMask backing:NSBackingStoreBuffered defer: NO];
-    [cat setBackgroundColor:[NSColor redColor]];
-    return cat;
 }
 
 - (BOOL)canBecomeKeyWindow 
