@@ -10,6 +10,8 @@
 
 @interface JBDesktopCat : NSView
 
+@property (strong, nonatomic) NSView *tempCatView;
+
 // @property (strong, nonatomic) NSString *nameOfCat;
 // @property (strong, nonatomic) NSString *breedOfCat; // maybe a typedef or custom class for breeds
 // Size?
