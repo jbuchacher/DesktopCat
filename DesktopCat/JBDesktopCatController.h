@@ -13,9 +13,10 @@
 
 @interface JBDesktopCatController : NSObject
 
-@property (strong, nonatomic) JBDesktopCatContainerWindow *kittyCatWindow;
+@property (strong, nonatomic) JBDesktopCatContainerWindow *kittyContainerWindow;
+
 @property (strong, nonatomic) JBDesktopCat *desktopCat;
 
-- (void) enterCat;
+- (void) startRightMeow;
 
 @end

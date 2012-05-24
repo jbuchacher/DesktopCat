@@ -11,26 +11,30 @@
 
 @implementation JBDesktopCatController
 
-@synthesize kittyCatWindow = _kittyCatWindow;
+@synthesize kittyContainerWindow = _kittyContainerWindow;
 @synthesize desktopCat = _desktopCat;
 
 - (id) init
 {
     if (self = [super init])
     {
-        _kittyCatWindow = [JBDesktopCatContainerWindow catWindow];    // Get a cat container window.
-        _desktopCat = [[JBDesktopCat alloc]initWithFrame: _kittyCatWindow.frame];
-        [_desktopCat setWantsLayer:TRUE];
-        [_desktopCat.layer setBackgroundColor: CGColorCreateGenericRGB(0.0, 0.0, 0.0, 1.0)];
-        [_kittyCatWindow setContentView: _desktopCat];
+
     }
     return self;
 }
 
-- (void) enterCat
+- (void) startRightMeow
 {
-    [_kittyCatWindow makeKeyAndOrderFront: _kittyCatWindow];    // Display a cat
-    [self setExpectationForCatToWalkRight];
+    
+    NSRect mainScreenRect = [[NSScreen mainScreen] frame];
+    NSRect kittyRect = NSMakeRect(0.0, 0.0, mainScreenRect.size.width, 100.0);
+    _kittyContainerWindow = [[JBDesktopCatContainerWindow alloc]initWithContentRect: kittyRect styleMask:NSBorderlessWindowMask backing:NSBackingStoreBuffered defer:YES];
+    _desktopCat = [[JBDesktopCat alloc]initWithFrame: kittyRect];
+    [_kittyContainerWindow setContentView: _desktopCat];
+    [_kittyContainerWindow makeKeyAndOrderFront: nil];
+        
+    [self performSelector:@selector(setExpectationForCatToWalkRight)];
+    
 }
 
 // Animation, expectations of movement of cat (they don't take orders.)
@@ -38,10 +42,27 @@
 - (void) setExpectationForCatToWalkRight
 {
 
-    NSDictionary *animations = [NSDictionary dictionaryWithObject: [self desktopCatWalkingNormal] forKey:@"frameOrigin"];
-    [_desktopCat setAnimations: animations];
-    NSPoint newOrigin = NSMakePoint((_desktopCat.frame.origin.x + 200), 0.0);
-    [_desktopCat.animator setFrameOrigin: newOrigin];
+//    NSDictionary *animations = [NSDictionary dictionaryWithObject: [self desktopCatWalkingNormal] forKey:@"frameOrigin"];
+//    [_desktopCat.tempCatView setAnimations: animations];
+//    NSPoint newOrigin = NSMakePoint((_desktopCat.tempCatView.frame.origin.x + 200), _desktopCat.tempCatView.frame.origin.y);
+//    [_desktopCat.tempCatView.animator setFrameOrigin: newOrigin];
+    
+    NSRect mainScreenRect = [[NSScreen mainScreen] frame];
+    CABasicAnimation *theAnimation;
+    
+    // create the animation object, specifying the position property as the key path
+    // the key path is relative to the target animation object (in this case a CALayer)
+    theAnimation=[CABasicAnimation animationWithKeyPath:@"position"];
+    // set the fromValue and toValue to the appropriate points
+    theAnimation.fromValue=[NSValue valueWithPoint:NSMakePoint(_desktopCat.tempCatView.frame.origin.x, _desktopCat.tempCatView.frame.origin.y)];
+    theAnimation.toValue=[NSValue valueWithPoint:NSMakePoint((_desktopCat.tempCatView.frame.origin.x + mainScreenRect.size.width), _desktopCat.tempCatView.frame.origin.y)];
+    // set the duration to 3.0 seconds
+    theAnimation.duration=3.0;
+    // set a custom timing function
+    theAnimation.timingFunction=[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
+    theAnimation.repeatCount = 5.0;
+    [_desktopCat.tempCatView.layer addAnimation:theAnimation forKey:@"position"];
+
 }
 
 - (void) setExpectationForCatToWalkLeft
@@ -54,7 +75,7 @@
 - (CAKeyframeAnimation *) desktopCatWalkingNormal
 {
         CAKeyframeAnimation *desktopCatWalkingNormal = [CAKeyframeAnimation animation];
-        desktopCatWalkingNormal.duration = 5.0f;
+        desktopCatWalkingNormal.duration = 4.0f;
         desktopCatWalkingNormal.values = [NSArray arrayWithObjects: [NSNumber numberWithFloat:0.0f], [NSNumber numberWithFloat:50.0f], [NSNumber numberWithFloat:100.0f], [NSNumber numberWithFloat:150.0f], [NSNumber numberWithFloat:200.0f], nil];
         desktopCatWalkingNormal.timingFunction = [CAMediaTimingFunction functionWithName: kCAMediaTimingFunctionLinear];
         desktopCatWalkingNormal.calculationMode = kCAAnimationLinear;   
