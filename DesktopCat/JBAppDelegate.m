@@ -16,7 +16,7 @@
 {
 
     _kittyController = [[JBDesktopCatController alloc]init];
-    [_kittyController enterCat];
+    [_kittyController startRightMeow];
     
 }
 
