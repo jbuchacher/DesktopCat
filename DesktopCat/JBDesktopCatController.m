@@ -9,31 +9,47 @@
 #import "JBDesktopCatController.h"
 #import <Quartz/Quartz.h>
 
+@interface JBDesktopCatController ()
+@property (assign) BOOL catIsAnimating;
+@property (assign) CGPoint catJumpStartPoint;
+@end
+
 @implementation JBDesktopCatController
 
 @synthesize kittyContainerWindow = _kittyContainerWindow;
 @synthesize desktopCat = _desktopCat;
+@synthesize catIsAnimating;
+
+@synthesize catJumpStartPoint;
 
 - (id) init
 {
     if (self = [super init])
     {
-
+        catIsAnimating = FALSE;
     }
     return self;
 }
 
 - (void) startRightMeow
 {
+    //NSRect kittyRect = NSMakeRect(0.0, 0.0, 100.0, 100.0);
+    NSRect kittyRect = [[NSScreen mainScreen] frame];
+    _kittyContainerWindow = [[JBDesktopCatContainerWindow alloc]initWithContentRect: kittyRect styleMask:NSBorderlessWindowMask backing:NSBackingStoreBuffered defer: NO];
+    _desktopCat = [[JBDesktopCat alloc]initWithFrame: NSMakeRect(0.0, 0.0, 100.0, 100.0)];
     
-    NSRect mainScreenRect = [[NSScreen mainScreen] frame];
-    NSRect kittyRect = NSMakeRect(0.0, 0.0, mainScreenRect.size.width, 100.0);
-    _kittyContainerWindow = [[JBDesktopCatContainerWindow alloc]initWithContentRect: kittyRect styleMask:NSBorderlessWindowMask backing:NSBackingStoreBuffered defer:YES];
-    _desktopCat = [[JBDesktopCat alloc]initWithFrame: kittyRect];
-    [_kittyContainerWindow setContentView: _desktopCat];
-    [_kittyContainerWindow makeKeyAndOrderFront: nil];
+    NSView *contentView = [[NSView alloc]initWithFrame: kittyRect];
+    [contentView setWantsLayer:TRUE];
+    [contentView addSubview: _desktopCat];
+    [_kittyContainerWindow setContentView: contentView];
+    
+    [_kittyContainerWindow makeKeyAndOrderFront:nil];
+    
+    // [_kittyContainerWindow makeKeyAndOrderFront: nil];
         
-    [self performSelector:@selector(setExpectationForCatToWalkRight)];
+    [self setExpectationForCatToJump];
+        
+    NSLog(@"Frame of Desktop Cat: %@\nFrame of Container Window: %@", NSStringFromRect(_desktopCat.frame), NSStringFromRect(_kittyContainerWindow.frame));
     
 }
 
@@ -47,27 +63,31 @@
 //    NSPoint newOrigin = NSMakePoint((_desktopCat.tempCatView.frame.origin.x + 200), _desktopCat.tempCatView.frame.origin.y);
 //    [_desktopCat.tempCatView.animator setFrameOrigin: newOrigin];
     
-    NSRect mainScreenRect = [[NSScreen mainScreen] frame];
     CABasicAnimation *theAnimation;
-    
-    // create the animation object, specifying the position property as the key path
-    // the key path is relative to the target animation object (in this case a CALayer)
     theAnimation=[CABasicAnimation animationWithKeyPath:@"position"];
-    // set the fromValue and toValue to the appropriate points
     theAnimation.fromValue=[NSValue valueWithPoint:NSMakePoint(_desktopCat.tempCatView.frame.origin.x, _desktopCat.tempCatView.frame.origin.y)];
-    theAnimation.toValue=[NSValue valueWithPoint:NSMakePoint((_desktopCat.tempCatView.frame.origin.x + mainScreenRect.size.width), _desktopCat.tempCatView.frame.origin.y)];
-    // set the duration to 3.0 seconds
-    theAnimation.duration=3.0;
-    // set a custom timing function
-    theAnimation.timingFunction=[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
-    theAnimation.repeatCount = 5.0;
-    [_desktopCat.tempCatView.layer addAnimation:theAnimation forKey:@"position"];
-
+    theAnimation.toValue=[NSValue valueWithPoint:NSMakePoint((_desktopCat.tempCatView.frame.origin.x + _desktopCat.window.frame.size.width), _desktopCat.tempCatView.frame.origin.y)];
+    theAnimation.duration = 0.5;
+    theAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
+    theAnimation.repeatCount = 2;
+    theAnimation.delegate = self;
+    theAnimation.autoreverses = TRUE;
+    [self.desktopCat.tempCatView.layer addAnimation: theAnimation forKey:@"position"];
+    
 }
 
 - (void) setExpectationForCatToWalkLeft
 {
     
+}
+
+- (void) setExpectationForCatToJump
+{
+    
+    catJumpStartPoint = _desktopCat.frame.origin;
+    NSLog(@"Subviews: %@", [[_kittyContainerWindow contentView] subviews]);
+    [_desktopCat.layer addAnimation: [self desktopCatJumping] forKey:@"desktopCatJumping"];
+
 }
 
 // Returned animations
@@ -92,7 +112,48 @@
     
     return desktopCatTurningAround;
 }
+     
+- (CAKeyframeAnimation *) desktopCatJumping
+{
+    // Fancy jumping animation.
+    NSRect catWindowFrame = [self.kittyContainerWindow frame];
+    CGMutablePathRef thePath = CGPathCreateMutable();
+    CGPathMoveToPoint(thePath,NULL,15.0f,15.0f);
+    CGPathAddCurveToPoint(thePath, NULL, 5.0f, 5.0f, 300.0, catWindowFrame.size.height - 100.0, 600, 5.0f);
+    
+    CAKeyframeAnimation *jumpAnimation;
+    jumpAnimation = [CAKeyframeAnimation animationWithKeyPath:@"position"];
+    // No keytimes/values necessary due to OS interpolating values based on CGPathRef
+    jumpAnimation.duration = 1.0;
+    jumpAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
+    jumpAnimation.repeatCount = 0;
+    jumpAnimation.autoreverses = TRUE;
+    jumpAnimation.delegate = self;
+    jumpAnimation.path = thePath;
+    
+    CFRelease(thePath);
+    
+    return jumpAnimation;
+}
 
+- (void) animationDidStart:(CAAnimation *)anim
+{
+    NSLog(@"Cat started animating.");
+}
+
+- (void) animationDidStop:(CAAnimation *)anim finished:(BOOL)flag
+{
+    NSLog(@"Cat stopped animating.");
+    if (catIsAnimating == FALSE)
+    {
+        [self setExpectationForCatToJump];
+//        NSView *view = [_kittyContainerWindow contentView];
+//        [view setWantsLayer:FALSE];
+        catIsAnimating = TRUE;
+    }
+    
+    
+}
 
 
 @end
