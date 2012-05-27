@@ -25,7 +25,8 @@
         // Make kitty cat on top of all the less interesting stuff
         [self setLevel:(CGWindowLevelForKey(kCGOverlayWindowLevelKey))];
         // Make container window background transparent.
-        [self setBackgroundColor: [NSColor clearColor]];        
+        [self setBackgroundColor: [NSColor clearColor]];     
+        [self setIgnoresMouseEvents:TRUE];
     }
     
     
@@ -34,19 +35,12 @@
 
 - (BOOL)canBecomeKeyWindow 
 {
-    return YES;
+    return NO;
 }
 
-- (BOOL)canBecomeMainWindow
+- (BOOL)isMovableByWindowBackground
 {
     return YES;
 }
-
-- (BOOL)acceptsMouseMovedEvents
-{
-    return YES;
-}
-
-
 
 @end
