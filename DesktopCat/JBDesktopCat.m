@@ -7,6 +7,7 @@
 //
 
 #import "JBDesktopCat.h"
+#import <Quartz/Quartz.h>
 
 @implementation JBDesktopCat
 @synthesize tempCatView;
@@ -27,7 +28,6 @@ static CGColorRef CGColorCreateFromNSColor (CGColorSpaceRef
     if (self = [super initWithFrame:frameRect])
     {
         [self setWantsLayer:TRUE];
-        [self.layer setMasksToBounds: TRUE];
         CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB ();
         CGColorRef cgColor = CGColorCreateFromNSColor (colorSpace, [NSColor redColor]);        
         [self.layer setBorderColor: cgColor];
@@ -44,6 +44,10 @@ static CGColorRef CGColorCreateFromNSColor (CGColorSpaceRef
          CGColorSpaceRelease (catColorSpace);
          CGColorRelease (catColor);  
         [self addSubview: tempCatView];
+    //--------------------------------------------------------------------------------------------
+        // Doesn't work because of NSWindow saying [self setIgnoresMouseEvents:TRUE];
+        NSTrackingArea *trackingArea = [[NSTrackingArea alloc]initWithRect:[self frame] options:NSTrackingActiveAlways | NSTrackingMouseMoved owner:self userInfo:nil];
+        [self addTrackingArea:trackingArea];
         
     }
 
