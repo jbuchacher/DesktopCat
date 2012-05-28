@@ -27,6 +27,7 @@
 		96DD472215736168007B1B13 /* JBDesktopCatSettingsWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 96DD472115736168007B1B13 /* JBDesktopCatSettingsWindow.m */; };
 		96DD4725157361A8007B1B13 /* JBDesktopCatSettingsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96DD4724157361A8007B1B13 /* JBDesktopCatSettingsView.m */; };
 		96DD4728157361DF007B1B13 /* JBDesktopCatSettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96DD4727157361DF007B1B13 /* JBDesktopCatSettingsController.m */; };
+		96DD4742157402B2007B1B13 /* CatHeadComposite.png in Resources */ = {isa = PBXBuildFile; fileRef = 96DD4741157402B2007B1B13 /* CatHeadComposite.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		96DD4724157361A8007B1B13 /* JBDesktopCatSettingsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBDesktopCatSettingsView.m; sourceTree = "<group>"; };
 		96DD4726157361DE007B1B13 /* JBDesktopCatSettingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBDesktopCatSettingsController.h; sourceTree = "<group>"; };
 		96DD4727157361DF007B1B13 /* JBDesktopCatSettingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBDesktopCatSettingsController.m; sourceTree = "<group>"; };
+		96DD4741157402B2007B1B13 /* CatHeadComposite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CatHeadComposite.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +229,7 @@
 		96DD471E1573614F007B1B13 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				96DD4741157402B2007B1B13 /* CatHeadComposite.png */,
 				96DD472015736168007B1B13 /* JBDesktopCatSettingsWindow.h */,
 				96DD472115736168007B1B13 /* JBDesktopCatSettingsWindow.m */,
 				96DD4723157361A8007B1B13 /* JBDesktopCatSettingsView.h */,
@@ -314,6 +317,7 @@
 				9687F32415620B3400886460 /* MainMenu.xib in Resources */,
 				9687F34215620DF800886460 /* README.md in Resources */,
 				96100F3D1572AAA100A8C866 /* menu_icon.png in Resources */,
+				96DD4742157402B2007B1B13 /* CatHeadComposite.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
