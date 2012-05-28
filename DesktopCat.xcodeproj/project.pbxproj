@@ -24,6 +24,9 @@
 		9687F35B1562127C00886460 /* JBDesktopCatContainerWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 9687F35A1562127C00886460 /* JBDesktopCatContainerWindow.m */; };
 		96D807DF1569D3500003E53A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96D807DE1569D3500003E53A /* QuartzCore.framework */; };
 		96D807E21569D3790003E53A /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96D807E11569D3790003E53A /* Quartz.framework */; };
+		96DD472215736168007B1B13 /* JBDesktopCatSettingsWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 96DD472115736168007B1B13 /* JBDesktopCatSettingsWindow.m */; };
+		96DD4725157361A8007B1B13 /* JBDesktopCatSettingsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96DD4724157361A8007B1B13 /* JBDesktopCatSettingsView.m */; };
+		96DD4728157361DF007B1B13 /* JBDesktopCatSettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96DD4727157361DF007B1B13 /* JBDesktopCatSettingsController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +69,12 @@
 		9687F35A1562127C00886460 /* JBDesktopCatContainerWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBDesktopCatContainerWindow.m; sourceTree = "<group>"; };
 		96D807DE1569D3500003E53A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		96D807E11569D3790003E53A /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
+		96DD472015736168007B1B13 /* JBDesktopCatSettingsWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBDesktopCatSettingsWindow.h; sourceTree = "<group>"; };
+		96DD472115736168007B1B13 /* JBDesktopCatSettingsWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBDesktopCatSettingsWindow.m; sourceTree = "<group>"; };
+		96DD4723157361A8007B1B13 /* JBDesktopCatSettingsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBDesktopCatSettingsView.h; sourceTree = "<group>"; };
+		96DD4724157361A8007B1B13 /* JBDesktopCatSettingsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBDesktopCatSettingsView.m; sourceTree = "<group>"; };
+		96DD4726157361DE007B1B13 /* JBDesktopCatSettingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBDesktopCatSettingsController.h; sourceTree = "<group>"; };
+		96DD4727157361DF007B1B13 /* JBDesktopCatSettingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBDesktopCatSettingsController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +157,7 @@
 		9687F31415620B3400886460 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				96DD471E1573614F007B1B13 /* Settings */,
 				96100F3C1572AAA100A8C866 /* menu_icon.png */,
 				9687F31F15620B3400886460 /* JBAppDelegate.h */,
 				9687F32015620B3400886460 /* JBAppDelegate.m */,
@@ -212,6 +222,19 @@
 				9687F35A1562127C00886460 /* JBDesktopCatContainerWindow.m */,
 			);
 			name = "Cat Container Window";
+			sourceTree = "<group>";
+		};
+		96DD471E1573614F007B1B13 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				96DD472015736168007B1B13 /* JBDesktopCatSettingsWindow.h */,
+				96DD472115736168007B1B13 /* JBDesktopCatSettingsWindow.m */,
+				96DD4723157361A8007B1B13 /* JBDesktopCatSettingsView.h */,
+				96DD4724157361A8007B1B13 /* JBDesktopCatSettingsView.m */,
+				96DD4726157361DE007B1B13 /* JBDesktopCatSettingsController.h */,
+				96DD4727157361DF007B1B13 /* JBDesktopCatSettingsController.m */,
+			);
+			name = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -330,6 +353,9 @@
 				9687F34C15620F0C00886460 /* JBDesktopCatController.m in Sources */,
 				9687F3581562124C00886460 /* JBDesktopCat.m in Sources */,
 				9687F35B1562127C00886460 /* JBDesktopCatContainerWindow.m in Sources */,
+				96DD472215736168007B1B13 /* JBDesktopCatSettingsWindow.m in Sources */,
+				96DD4725157361A8007B1B13 /* JBDesktopCatSettingsView.m in Sources */,
+				96DD4728157361DF007B1B13 /* JBDesktopCatSettingsController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
