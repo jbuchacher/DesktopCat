@@ -7,9 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "JBDesktopCatSettingsWindow.h"
+#import "JBDesktopCatSettingsView.h"
 
 @interface JBDesktopCatSettingsController : NSObject
 
+@property (strong, nonatomic) JBDesktopCatSettingsWindow *settingsWindow;
+@property (strong, nonatomic) JBDesktopCatSettingsView *settingsView;
+
+@property (assign) BOOL isDisplayingSettings;
+
 - (void) displaySettings;
+- (void) dismissAndSaveSettings;
+
 
 @end
