@@ -14,7 +14,7 @@
 @property (strong, nonatomic) JBDesktopCatController *kittyController;
 
 // Settings etc
-@property (assign) IBOutlet NSMenu *theMenu;
-@property (strong, nonatomic) NSStatusItem *theMenuItem;
+@property (assign) IBOutlet NSMenu *statusBarMenu;
+@property (strong, nonatomic) NSStatusItem *statusBarItem;
 
 @end
