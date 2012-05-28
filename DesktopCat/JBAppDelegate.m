@@ -11,7 +11,7 @@
 @implementation JBAppDelegate
 
 @synthesize kittyController = _kittyController;
-@synthesize statusBarItem, statusBarMenu;
+@synthesize statusBarItem, statusBarMenu, settingsController;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
@@ -46,6 +46,19 @@
 // Menu item selectors
 - (void) toggleSettings
 {
+    if (settingsController == nil)
+    {
+        settingsController = [[JBDesktopCatSettingsController alloc] init];
+    }
+    
+    if (settingsController.isDisplayingSettings == NO)
+    {
+        [settingsController displaySettings];
+    }
+    else 
+    {
+        [settingsController dismissAndSaveSettings];
+    }
     
 }
 

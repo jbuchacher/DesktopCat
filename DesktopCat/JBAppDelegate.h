@@ -8,6 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import "JBDesktopCatController.h"
+#import "JBDesktopCatSettingsController.h"
 
 @interface JBAppDelegate : NSObject <NSApplicationDelegate>
 
@@ -16,5 +17,7 @@
 // Settings etc
 @property (assign) IBOutlet NSMenu *statusBarMenu;
 @property (strong, nonatomic) NSStatusItem *statusBarItem;
+
+@property (strong, nonatomic) JBDesktopCatSettingsController *settingsController;
 
 @end
