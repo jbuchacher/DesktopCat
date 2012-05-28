@@ -47,10 +47,8 @@
     
     // [_kittyContainerWindow makeKeyAndOrderFront: nil];
         
-    [self setExpectationForCatToJump];
-        
-    NSLog(@"Frame of Desktop Cat: %@\nFrame of Container Window: %@", NSStringFromRect(_desktopCat.frame), NSStringFromRect(_kittyContainerWindow.frame));
-    
+    // [self setExpectationForCatToJump];
+
 }
 
 // Animation, expectations of movement of cat (they don't take orders.)
@@ -85,7 +83,6 @@
 {
     
     catJumpStartPoint = _desktopCat.frame.origin;
-    NSLog(@"Subviews: %@", [[_kittyContainerWindow contentView] subviews]);
     [_desktopCat.layer addAnimation: [self desktopCatJumping] forKey:@"desktopCatJumping"];
 
 }
@@ -138,19 +135,17 @@
 
 - (void) animationDidStart:(CAAnimation *)anim
 {
-    NSLog(@"Cat started animating.");
 }
 
 - (void) animationDidStop:(CAAnimation *)anim finished:(BOOL)flag
 {
-    NSLog(@"Cat stopped animating.");
-    if (catIsAnimating == FALSE)
-    {
-        [self setExpectationForCatToJump];
-//        NSView *view = [_kittyContainerWindow contentView];
-//        [view setWantsLayer:FALSE];
-        catIsAnimating = TRUE;
-    }
+//    if (catIsAnimating == FALSE)
+//    {
+//        [self setExpectationForCatToJump];
+////        NSView *view = [_kittyContainerWindow contentView];
+////        [view setWantsLayer:FALSE];
+//        catIsAnimating = TRUE;
+//    }
     
     
 }
