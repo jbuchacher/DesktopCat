@@ -27,6 +27,15 @@
     [settingsWindow.contentView addSubview: settingsView];
     [settingsWindow makeKeyAndOrderFront: nil];
     self.isDisplayingSettings = YES;
+    
+    NSButton *closeButton = [[NSButton alloc]initWithFrame:NSMakeRect(0.0, 0.0, 25.0, 25.0)];
+    [closeButton setTitle:@"X"];
+    NSPoint closeButtonCenterPoint = NSMakePoint(410, 440);
+    [closeButton setFrameOrigin: closeButtonCenterPoint];
+    [closeButton setTarget: self];
+    [closeButton setAction: @selector(dismissAndSaveSettings)];
+    
+    [self.settingsView addSubview: closeButton];
 }
 
 - (void) dismissAndSaveSettings
