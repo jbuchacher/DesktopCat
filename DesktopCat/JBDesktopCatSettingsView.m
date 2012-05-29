@@ -26,7 +26,11 @@
     [img compositeToPoint:NSMakePoint(0.0, 0.0) operation:NSCompositeSourceOver];
     [self.window setHasShadow: NO];
     [self.window setHasShadow: YES];
-    
+}
+
+- (void) mouseUp:(NSEvent *)theEvent
+{
+    NSLog(@"Clicked NSPoint: %@", NSStringFromPoint(theEvent.locationInWindow));
 }
 
 @end
