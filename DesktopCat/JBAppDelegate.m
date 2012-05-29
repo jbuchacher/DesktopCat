@@ -33,6 +33,15 @@
     [statusBarItem setHighlightMode:TRUE];
     [statusBarItem setImage:[NSImage imageNamed:@"menu_icon.png"]];
     
+    NSMenuItem *debugMenuItem = [[NSMenuItem alloc] initWithTitle:@"Debugging" action: nil keyEquivalent:@""];
+    NSMenu *debugMenu = [[NSMenu alloc] init];
+    
+    [debugMenu addItemWithTitle:@"Walk" action:@selector(toggleDebugAction:) keyEquivalent:@""];
+    [debugMenu addItemWithTitle:@"Jump" action:@selector(toggleDebugAction:) keyEquivalent:@""];
+    
+    [statusBarMenu addItem: debugMenuItem];
+    [statusBarMenu setSubmenu: debugMenu forItem: debugMenuItem];
+    
     NSArray *menuItemLabels = [NSArray arrayWithObjects:@"Settings", @"Quit", nil];
     
     for (NSString *label in menuItemLabels)
@@ -40,6 +49,20 @@
         NSString *selectorName = [NSString stringWithFormat:@"toggle%@", label];
         SEL theSelector = NSSelectorFromString(selectorName);
         [statusBarMenu addItemWithTitle: label action: theSelector keyEquivalent: @""];
+    }
+}
+
+- (void) toggleDebugAction:(id)debugAction
+{
+    NSMenuItem *clickedMenuItem = (NSMenuItem *)debugAction;
+    
+    if ([clickedMenuItem.title isEqualToString:@"Walk"])
+    {
+        [_kittyController askCatToWalk];
+    }
+    else if ([clickedMenuItem.title isEqualToString:@"Jump"])
+    {
+        [_kittyController askCatToJump];
     }
 }
 
@@ -59,7 +82,6 @@
     {
         [settingsController dismissAndSaveSettings];
     }
-    
 }
 
 - (void) toggleQuit
