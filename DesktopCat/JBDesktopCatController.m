@@ -42,54 +42,34 @@
     [contentView setWantsLayer:TRUE];
     [contentView addSubview: _desktopCat];
     [_kittyContainerWindow setContentView: contentView];
-    
     [_kittyContainerWindow makeKeyAndOrderFront:nil];
-    
-    // [_kittyContainerWindow makeKeyAndOrderFront: nil];
-        
-    // [self setExpectationForCatToJump];
-
 }
 
 // Animation, expectations of movement of cat (they don't take orders.)
 
-- (void) setExpectationForCatToWalkRight
+- (void) askCatToWalk
 {
-
-//    NSDictionary *animations = [NSDictionary dictionaryWithObject: [self desktopCatWalkingNormal] forKey:@"frameOrigin"];
-//    [_desktopCat.tempCatView setAnimations: animations];
-//    NSPoint newOrigin = NSMakePoint((_desktopCat.tempCatView.frame.origin.x + 200), _desktopCat.tempCatView.frame.origin.y);
-//    [_desktopCat.tempCatView.animator setFrameOrigin: newOrigin];
-    
     CABasicAnimation *theAnimation;
     theAnimation=[CABasicAnimation animationWithKeyPath:@"position"];
-    theAnimation.fromValue=[NSValue valueWithPoint:NSMakePoint(_desktopCat.tempCatView.frame.origin.x, _desktopCat.tempCatView.frame.origin.y)];
-    theAnimation.toValue=[NSValue valueWithPoint:NSMakePoint((_desktopCat.tempCatView.frame.origin.x + _desktopCat.window.frame.size.width), _desktopCat.tempCatView.frame.origin.y)];
+    theAnimation.fromValue=[NSValue valueWithPoint:NSMakePoint(_desktopCat.frame.origin.x, _desktopCat.frame.origin.y)];
+    theAnimation.toValue=[NSValue valueWithPoint:NSMakePoint((_desktopCat.frame.origin.x + _desktopCat.window.frame.size.width), _desktopCat.frame.origin.y)];
     theAnimation.duration = 0.5;
     theAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
-    theAnimation.repeatCount = 2;
+    theAnimation.repeatCount = 0;
     theAnimation.delegate = self;
     theAnimation.autoreverses = TRUE;
-    [self.desktopCat.tempCatView.layer addAnimation: theAnimation forKey:@"position"];
-    
+    [self.desktopCat.layer addAnimation: theAnimation forKey:@"position"];
 }
 
-- (void) setExpectationForCatToWalkLeft
+- (void) askCatToJump
 {
-    
-}
-
-- (void) setExpectationForCatToJump
-{
-    
     catJumpStartPoint = _desktopCat.frame.origin;
-    [_desktopCat.layer addAnimation: [self desktopCatJumping] forKey:@"desktopCatJumping"];
-
+    [_desktopCat.layer addAnimation: [self desktopCatJump] forKey:@"desktopCatJumping"];
 }
 
 // Returned animations
 
-- (CAKeyframeAnimation *) desktopCatWalkingNormal
+- (CAKeyframeAnimation *) desktopCatWalk
 {
         CAKeyframeAnimation *desktopCatWalkingNormal = [CAKeyframeAnimation animation];
         desktopCatWalkingNormal.duration = 4.0f;
@@ -100,7 +80,7 @@
     return desktopCatWalkingNormal;
 }
 
-- (CAKeyframeAnimation *) desktopCatTurningAround
+- (CAKeyframeAnimation *) desktopCatTurnAround
 {
     CAKeyframeAnimation *desktopCatTurningAround = [CAKeyframeAnimation animation];
     desktopCatTurningAround.duration = 1.0f;
@@ -110,7 +90,7 @@
     return desktopCatTurningAround;
 }
      
-- (CAKeyframeAnimation *) desktopCatJumping
+- (CAKeyframeAnimation *) desktopCatJump
 {
     // Fancy jumping animation.
     NSRect catWindowFrame = [self.kittyContainerWindow frame];
@@ -135,18 +115,11 @@
 
 - (void) animationDidStart:(CAAnimation *)anim
 {
+    
 }
 
 - (void) animationDidStop:(CAAnimation *)anim finished:(BOOL)flag
 {
-//    if (catIsAnimating == FALSE)
-//    {
-//        [self setExpectationForCatToJump];
-////        NSView *view = [_kittyContainerWindow contentView];
-////        [view setWantsLayer:FALSE];
-//        catIsAnimating = TRUE;
-//    }
-    
     
 }
 
