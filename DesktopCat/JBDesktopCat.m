@@ -10,7 +10,6 @@
 #import <Quartz/Quartz.h>
 
 @implementation JBDesktopCat
-@synthesize tempCatView;
 
 static CGColorRef CGColorCreateFromNSColor (CGColorSpaceRef
                                             colorSpace, NSColor *color)
@@ -29,26 +28,23 @@ static CGColorRef CGColorCreateFromNSColor (CGColorSpaceRef
     {
         [self setWantsLayer:TRUE];
         CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB ();
-        CGColorRef cgColor = CGColorCreateFromNSColor (colorSpace, [NSColor redColor]);        
-        [self.layer setBorderColor: cgColor];
-        [self.layer setBorderWidth:2.0f];
+        CGColorRef redColor = CGColorCreateFromNSColor (colorSpace, [NSColor redColor]);
+        CGColorRef blackColor = CGColorCreateFromNSColor(colorSpace, [NSColor blackColor]);
+        [self.layer setBorderColor: redColor];
+        [self.layer setBorderWidth:5.0f];
+        [self.layer setBackgroundColor: blackColor];
         CGColorSpaceRelease (colorSpace);
-        CGColorRelease (cgColor);        
+        CGColorRelease (redColor);   
+        CGColorRelease(blackColor);
     //--------------------------------------------------------------------------------------------
-        NSRect tempCatRect = NSInsetRect(NSMakeRect(frameRect.origin.x, frameRect.origin.y, 100.0, 100.0), 5.0, 5.0);
-        tempCatView = [[NSView alloc]initWithFrame: tempCatRect];
         CGColorSpaceRef catColorSpace = CGColorSpaceCreateDeviceRGB ();
         CGColorRef catColor = CGColorCreateFromNSColor (colorSpace, [NSColor blackColor]);  
-        [tempCatView setWantsLayer:TRUE];
-        [tempCatView.layer setBackgroundColor:catColor];
          CGColorSpaceRelease (catColorSpace);
          CGColorRelease (catColor);  
-        [self addSubview: tempCatView];
     //--------------------------------------------------------------------------------------------
         // Doesn't work because of NSWindow saying [self setIgnoresMouseEvents:TRUE];
         NSTrackingArea *trackingArea = [[NSTrackingArea alloc]initWithRect:[self frame] options:NSTrackingActiveAlways | NSTrackingMouseMoved owner:self userInfo:nil];
         [self addTrackingArea:trackingArea];
-        
     }
 
     return self;
